@@ -7,7 +7,7 @@ namespace Components
 	[GenerateAuthoringComponent]
 	public struct MoveData : IComponentData
 	{
-		[HideInInspector] public float3 TargetDirection;
-		public float MoveSpeed;
+		[HideInInspector] public float3 targetDirection;
+		public float moveSpeed;
 	}
 }

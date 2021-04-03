@@ -16,11 +16,11 @@ namespace Systems
             
             Entities.ForEach((ref RawInputData input, ref MoveData moveData, ref RotateData rotateData) =>
             {
-                input.InputH = inputH;
-                input.InputV = inputV;
+                input.inputH = inputH;
+                input.inputV = inputV;
                 
-                moveData.TargetDirection = new float3(input.InputH, 0, input.InputV);
-                rotateData.RotateTargetPosition = moveData.TargetDirection;
+                moveData.targetDirection = new float3(input.inputH, 0, input.inputV);
+                rotateData.rotateTargetPosition = moveData.targetDirection;
             }).Schedule();
         }
     }

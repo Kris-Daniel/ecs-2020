@@ -12,7 +12,7 @@ namespace Systems
 			
 			Entities.ForEach((ref Translation translation, in MoveData moveData) =>
 			{
-				translation.Value += moveData.TargetDirection * moveData.MoveSpeed * deltaTime;
+				translation.Value += moveData.targetDirection * moveData.moveSpeed * deltaTime;
 			}).Schedule();
 		}
 	}

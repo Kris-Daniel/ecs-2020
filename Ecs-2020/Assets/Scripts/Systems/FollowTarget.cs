@@ -11,41 +11,16 @@ namespace Systems
 			Entities.ForEach((ref MoveData moveData, in TargetData targetData, in Translation translation) =>
 			{
 				ComponentDataFromEntity<Translation> translationArray = GetComponentDataFromEntity<Translation>(true);
-				if (!translationArray.HasComponent(targetData.FollowEntity))
+				if (!translationArray.HasComponent(targetData.followEntity))
 				{
 					return;
 				}
 
-				Translation targetPosition = translationArray[targetData.FollowEntity];
+				Translation targetPosition = translationArray[targetData.followEntity];
 
-				moveData.TargetDirection = targetPosition.Value - translation.Value;
+				moveData.targetDirection = targetPosition.Value + targetData.targetOffset - translation.Value;
 
 			}).Schedule();
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

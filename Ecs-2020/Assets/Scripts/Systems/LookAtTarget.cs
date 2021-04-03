@@ -12,15 +12,15 @@ namespace Systems
 			Entities.ForEach((ref RotateData rotateData, in Translation translation, in TargetData targetData) =>
 			{
 				ComponentDataFromEntity<Translation> translationArray = GetComponentDataFromEntity<Translation>(true);
-				if (!translationArray.HasComponent(targetData.LookAtEntity))
+				if (!translationArray.HasComponent(targetData.lookAtEntity))
 				{
 					return;
 				}
 
-				Translation targetPosition = translationArray[targetData.LookAtEntity];
+				Translation targetPosition = translationArray[targetData.lookAtEntity];
 
-				rotateData.RotateTargetPosition = targetPosition.Value - translation.Value;
-				rotateData.RotateTargetPosition = new float3(rotateData.RotateTargetPosition.x, 0, rotateData.RotateTargetPosition.z);
+				rotateData.rotateTargetPosition = targetPosition.Value - translation.Value;
+				rotateData.rotateTargetPosition = new float3(rotateData.rotateTargetPosition.x, 0, rotateData.rotateTargetPosition.z);
 			}).Schedule();
 		}
 	}

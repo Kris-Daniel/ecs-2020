@@ -7,7 +7,7 @@ namespace Components
 	[GenerateAuthoringComponent]
 	public struct RotateData : IComponentData
 	{
-		[HideInInspector] public float3 RotateTargetPosition;
-		public float RotationSpeed;
+		[HideInInspector] public float3 rotateTargetPosition;
+		public float rotationSpeed;
 	}
 }
