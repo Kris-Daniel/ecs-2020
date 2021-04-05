@@ -23,7 +23,7 @@ namespace Utils
 		{
 			dstManager.AddComponent<CopyTransformToGameObject>(entity);
 			
-			dstManager.AddComponentData(entity, new MoveData{ moveSpeed = moveSpeed });
+			dstManager.AddComponentData(entity, new SpeedData{ speed = moveSpeed });
 			dstManager.AddComponentData(entity, new RotateData{ rotationSpeed = rotateSpeed });
 			dstManager.AddComponentData(entity, new TargetData{ followEntity = targetEntity, lookAtEntity = lookAtEntity, targetOffset = offset});
 		}

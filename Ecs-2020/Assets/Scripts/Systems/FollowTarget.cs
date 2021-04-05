@@ -8,7 +8,7 @@ namespace Systems
 	{
 		protected override void OnUpdate()
 		{
-			Entities.ForEach((ref MoveData moveData, in TargetData targetData, in Translation translation) =>
+			Entities.ForEach((ref SpeedData moveData, in TargetData targetData, in Translation translation) =>
 			{
 				ComponentDataFromEntity<Translation> translationArray = GetComponentDataFromEntity<Translation>(true);
 				if (!translationArray.HasComponent(targetData.followEntity))
@@ -18,7 +18,7 @@ namespace Systems
 
 				Translation targetPosition = translationArray[targetData.followEntity];
 
-				moveData.targetDirection = targetPosition.Value + targetData.targetOffset - translation.Value;
+				//moveData.targetDirection = targetPosition.Value + targetData.targetOffset - translation.Value;
 
 			}).Schedule();
 		}

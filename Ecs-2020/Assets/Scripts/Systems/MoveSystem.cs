@@ -10,9 +10,9 @@ namespace Systems
 		{
 			float deltaTime = Time.DeltaTime;
 			
-			Entities.ForEach((ref Translation translation, in MoveData moveData) =>
+			Entities.ForEach((ref Translation translation, in SpeedData moveData) =>
 			{
-				translation.Value += moveData.targetDirection * moveData.moveSpeed * deltaTime;
+				//translation.Value += moveData.targetDirection * moveData.speed * deltaTime;
 			}).Schedule();
 		}
 	}
